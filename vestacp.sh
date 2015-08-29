@@ -28,7 +28,7 @@ while [ true ]
 do
     read -p "Enter admin email: " email
 	echo
-	if [[ "$email" =~ "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$" ]]
+	if [[ "$email" =~ ^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$ ]]
 then
     echo "Email address $email is valid."
 else
