@@ -20,14 +20,48 @@ if [ "x$(id -u)" != 'x0' ]; then
     echo 'Error: this script can only be executed by root'
     exit 1
 fi
+
+# Change root password for your server
+clear
+echo "Cambiamos la clave de root"
+passwd root
+echo
+
+
+
+
 ##################################
 # Interactive Part
-# Get admin's email
-email=""
+# change root password
 
 while true
 do
-    read -p "Enter admin email: " email
+	read -s  -p "Enter root password: " rootpass1
+	echo
+	read -s  -p "Enter root password again: " rootpass2
+	echo
+	
+	if  [ -z "$rootpass1" && -z "$rootpass2"];
+	then
+	    echo "Password will not be changed"
+	    break
+	fi
+	
+	if [ $rootpass1 != $rootpass2 ]
+	then
+		echo Passwords not identical. Enter them again.
+		echo
+	else
+	    echo
+	    break
+	fi
+done
+
+##################################
+# Get admin's email
+while true
+do
+    read -p "Enter Vesta admin email: " email
     echo
     if [[ "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]]
     then
@@ -37,6 +71,9 @@ do
         echo "Email address $email is invalid."
     fi
 done
+
+
+
 
 exit
 
@@ -74,11 +111,6 @@ locale-gen
 locale-gen en_US.UTF-8
 dpkg-reconfigure locales
 
-# Change root password for your server
-clear
-echo "Cambiamos la clave de root"
-passwd root
-echo
 
 # install vesta with admin's email
 curl -O http://vestacp.com/pub/vst-install.sh
