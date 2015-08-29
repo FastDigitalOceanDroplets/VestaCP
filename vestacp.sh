@@ -21,15 +21,6 @@ if [ "x$(id -u)" != 'x0' ]; then
     exit 1
 fi
 
-# Change root password for your server
-clear
-echo "Cambiamos la clave de root"
-passwd root
-echo
-
-
-
-
 ##################################
 # Interactive Part
 # change root password
@@ -56,6 +47,7 @@ do
 	    break
 	fi
 done
+echo "root:$rootpass1" | chpasswd
 
 ##################################
 # Get admin's email
