@@ -24,16 +24,18 @@ fi
 # Interactive Part
 # Get admin's email
 email=""
-while [ true ]
+
+while true
 do
     read -p "Enter admin email: " email
-	echo
-	if [[ "$email" =~ ^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$ ]]
-then
-    echo "Email address $email is valid."
-else
-    echo "Email address $email is invalid."
-fi
+    echo
+    if [[ "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]]
+    then
+        echo "Email address $email is valid."
+        break
+    else
+        echo "Email address $email is invalid."
+    fi
 done
 
 exit
