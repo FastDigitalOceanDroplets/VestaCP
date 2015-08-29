@@ -9,7 +9,7 @@
 # Get it at with a 10 dollar rebate at https://www.digitalocean.com/?refcode=4c039b01c48f
 #
 # After login to your droplet for the first time, copy the line bellow (withouth the first #) and execute it in the terminal
-# curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacp.sh && bash vestacp.sh
+# curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
 #
 # When this other process finishes, do the same with the next line in the server
 # curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacp.sh && bash vestacp.sh
@@ -24,7 +24,7 @@ fi
 # Interactive Part
 # Get admin's email
 email=""
-$valid_email=[ "$email" =~ "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" ]
+valid_email=[ "$email" =~ "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" ]
 while [$valid_email]
 do
     read -p "Enter admin email: " email
