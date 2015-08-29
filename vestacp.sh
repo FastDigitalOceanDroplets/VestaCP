@@ -1,12 +1,20 @@
 #!/bin/bash
 #
 # Minimal requirements
+# --------------------
+# 
+# A 5 dollars a month Digital Ocean Ubuntu 14.04 64bit server ()
+512 mb of ram
 
-# curl -O https://dl.dropboxusercontent.com/u/xxx/Digital_Ocean_Vesta/vesta.sh && bash vesta.sh
+# curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacp.sh && bash vestacp.sh
 if [ "x$(id -u)" != 'x0' ]; then
     echo 'Error: this script can only be executed by root'
     exit 1
 fi
+
+
+
+
 # -------------- Creats SWAP
 sudo fallocate -l 512M /swapfile
 sudo chmod 600 /swapfile
