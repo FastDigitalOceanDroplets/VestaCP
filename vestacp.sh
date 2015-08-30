@@ -73,16 +73,22 @@ do
         echo
         read -s  -p "Enter admin password again: " adminpass2
         echo
-        if [ $adminpass1 != $adminpass1 ]
+        if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
         then
-            echo "Passwords are not identical. Try again."
-            echo
+            if [ $adminpass1 != $adminpass1 ]
+            then
+                echo "Passwords are not identical. Try again."
+                echo
+            else
+                #echo "root:$adminpass1" | chpasswd
+                echo "Password accepted."
+                echo
+                break
+            fi
         else
-            #echo "root:$adminpass1" | chpasswd
-            echo "Password accepted."
+            echo "Passwords can't be empty. Try again."
             echo
-            break
-        fi
+
     done
 
     ##################################
