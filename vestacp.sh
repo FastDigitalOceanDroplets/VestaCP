@@ -31,7 +31,7 @@ fi
     	echo
 	read -s  -p "Enter root password again: " rootpass2
 	echo
-	if  [[-z "$rootpass1"]] && [[-z "$rootpass2"]]
+	if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
 	then
 	     echo "Password will not be changed. Both are empty."
              break
