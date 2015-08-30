@@ -8,7 +8,7 @@ A 5 dollars a month Digital Ocean Ubuntu 14.04 64bit server ()
 20 GB SSD Disk
 1000 GB Transfer
 
-Get it at with a 10 dollar rebate at https://www.digitalocean.com/?refcode=4c039b01c48f
+Get it at https://goo.gl/WWmpYW
 
 The biger the droplet, the better it works. Some features like Spam-Assasin and ClamAV install by default in servers with more than 3 GB of ram.
 
