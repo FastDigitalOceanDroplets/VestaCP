@@ -82,7 +82,7 @@ do
     #     echo
     # fi
 
-    if [[ "$fqdn" =~ (?=^.{4,253}$)(^(?:[a-zA-Z](?:(?:[a-zA-Z0-9\-]){,61}[a-zA-Z])?\.)+[a-zA-Z]{2,}$) ]]
+    if [[ "$fqdn" =~ (?=^.{1,254}$)(^(?:(?!\d|-)[a-zA-Z0-9\-]{1,63}(?<!-)\.?)+(?:[a-zA-Z]{2,})$) ]]
     then
         not_valid=true
         echo "FQDN is not valid. Try again."
