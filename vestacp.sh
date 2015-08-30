@@ -75,6 +75,9 @@ do
         echo
         if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
         then
+            echo "Passwords can't be empty. Try again."
+            echo
+        else
             if [ $adminpass1 != $adminpass2 ]
             then
                 echo "Passwords are not identical. Try again."
@@ -85,9 +88,6 @@ do
                 echo
                 break
             fi
-        else
-            echo "Passwords can't be empty. Try again."
-            echo
         fi
     done
 
