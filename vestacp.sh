@@ -86,6 +86,31 @@ do
 done
 
 ##################################
+# change Vesta MySQL password
+while true
+do
+    read -s  -p "Enter MySQL password: " mysql1
+    echo
+    read -s  -p "Enter MySQL password again: " mysql2
+    echo
+    if  [[ -z "$mysql1" ]] && [[ -z "$mysql2" ]]
+    then
+        echo "Passwords can't be empty. Try again."
+        echo
+    else
+        if [ $mysql1 != $mysql2 ]
+        then
+            echo "Passwords are not identical. Try again."
+            echo
+        else
+            echo "Password accepted."
+            echo
+            break
+        fi
+    fi
+done
+
+##################################
 # Get admin's email
 while true
 do
