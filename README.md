@@ -17,4 +17,4 @@ After login to your droplet for the first time, copy the line bellow (withouth t
 
 When this other process finishes, do the same with the next line in the server
 
-    curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacp_post.sh && bash vestacp_post.sh
+    bash vestacp_post.sh
