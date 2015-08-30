@@ -89,6 +89,36 @@ do
             fi
         fi
     done
+##################################
+# Interactive Part
+# change root password
+
+while true
+do
+
+    while true
+    do
+        read -s  -p "Enter admin password: " adminpass1
+        echo
+        read -s  -p "Enter admin password again: " adminpass2
+        echo
+        if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
+        then
+            echo "Passwords can't be empty. Try again."
+            echo
+        else
+            if [ $adminpass1 != $adminpass2 ]
+            then
+                echo "Passwords are not identical. Try again."
+                echo
+            else
+                echo "Password accepted."
+                echo
+                break
+            fi
+        fi
+    done
+
 
     ##################################
     # Get admin's email
