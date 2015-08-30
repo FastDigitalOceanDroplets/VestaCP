@@ -61,6 +61,31 @@ while true
 do
 
 ##################################
+# Set Vesta domain
+echo "Enter a FQDN (full qualified domain name)"
+echo "e"
+while true
+do
+    read -p "Enter FQDN (ful: " adminpass1
+    echo
+    if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
+    then
+        echo "Passwords can't be empty. Try again."
+        echo
+    else
+        if [ $adminpass1 != $adminpass2 ]
+        then
+            echo "Passwords are not identical. Try again."
+            echo
+        else
+            echo "Password accepted."
+            echo
+            break
+        fi
+    fi
+done
+
+##################################
 # change Vesta admin password
 while true
 do
