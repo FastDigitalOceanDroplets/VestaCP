@@ -88,7 +88,7 @@ do
         else
             echo "Passwords can't be empty. Try again."
             echo
-
+        fi
     done
 
     ##################################
