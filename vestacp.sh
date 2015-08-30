@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacp_post.sh && bash vestacp_post.sh
+curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacp_post.sh
 
 # Prevents doing this from other account than root
 if [ "x$(id -u)" != 'x0' ]; then
