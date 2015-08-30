@@ -25,29 +25,26 @@ fi
 # Interactive Part
 # change root password
 
-while true
-do
+    while true
+    do
 	read -s  -p "Enter root password: " rootpass1
-	echo
+    	echo
 	read -s  -p "Enter root password again: " rootpass2
 	echo
-	
-	if  [[-z "$rootpass1"] && [-z "$rootpass2"]]
+	if  [[-z "$rootpass1"]] && [[-z "$rootpass2"]]
 	then
-	    echo "Password will not be changed"
-	    break
-	fi
-	
-	if [ $rootpass1 != $rootpass2 ]
-	then
-		echo Passwords not identical. Enter them again.
-		echo
+	     echo "Password will not be changed. Both are empty."
+             break
 	else
-	    echo
-	    break
+	    if [ $rootpass1 != $rootpass2 ]
+	    then
+                echo "Passwords are not identical. Try again."
+ 	        else
+                echo "root:$rootpass1" | chpasswd
+                break
+            fi
 	fi
-done
-echo "root:$rootpass1" | chpasswd
+    done
 
 ##################################
 # Get admin's email
