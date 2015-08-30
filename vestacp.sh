@@ -7,12 +7,14 @@
 # 20 GB SSD Disk
 # 1000 GB Transfer
 # Get it at with a 10 dollar rebate at https://www.digitalocean.com/?refcode=4c039b01c48f
+# The biger the droplet, the better it works.
+# Some features like Spam-Assasin and ClamAV install by default in servers with more than 3 GB of ram.
 #
 # After login to your droplet for the first time, copy the line bellow (withouth the first #) and execute it in the terminal
 # curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
 #
 # When this other process finishes, do the same with the next line in the server
-# curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacp.sh && bash vestacp.sh
+# curl -O https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/vestacppost.sh && bash vestacppost.sh
 
 
 # Prevents doing this from other account than root
@@ -34,13 +36,17 @@ fi
 	if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
 	then
 	     echo "Password will not be changed. Both are empty."
+	     echo
              break
 	else
 	    if [ $rootpass1 != $rootpass2 ]
 	    then
                 echo "Passwords are not identical. Try again."
+                echo
  	        else
                 echo "root:$rootpass1" | chpasswd
+                echo "Password changed."
+                echo
                 break
             fi
 	fi
@@ -61,12 +67,9 @@ do
     fi
 done
 
-
-
-
-exit
-
 # Creates SWAP on the server
+# One of the things that I have lerned is that this kind of servers need swap.
+# These fast SSD disks do this even more dicirable to have.
 sudo fallocate -l 512M /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
@@ -100,11 +103,6 @@ locale-gen
 locale-gen en_US.UTF-8
 dpkg-reconfigure locales
 
-
 # install vesta with admin's email
 curl -O http://vestacp.com/pub/vst-install.sh
 bash vst-install.sh -e $email
-
-# De aca para abajo no se ejecuta nada
-# Arreglar el MySQL
-service mysql stop && service mysql start && dpkg-reconfigure mysql-server-5.5
