@@ -13,7 +13,8 @@ if [ "x$(id -u)" != 'x0' ]; then
 fi
 
 curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp_post.sh
-
+echo
+echo
 echo "################################################################"
 echo "#     https://github.com/FastDigitalOceanDroplets/VestaCP      #"
 echo "#                                                              #"
@@ -27,6 +28,35 @@ echo "################################################################"
 echo
 
 
+
+##################################
+# Interactive Part
+# change root password
+
+# while true
+# do
+#     read -s  -p "Enter admin password: " rootpass1
+#     echo
+#     read -s  -p "Enter admin password again: " rootpass2
+#     echo
+#     if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
+#     then
+#         echo "Password will not be changed. Both are empty."
+#         echo
+#         break
+#     else
+#         if [ $rootpass1 != $rootpass2 ]
+#         then
+#                 echo "Passwords are not identical. Try again."
+#                 echo
+#         else
+#                 #echo "root:$rootpass1" | chpasswd
+#                 echo "Password changed."
+#                 echo
+#                 break
+#         fi
+#     fi
+# done
 
 
 
@@ -63,22 +93,23 @@ do
 	fi
     done
 
-done
-##################################
-# Get admin's email
-while true
-do
-    read -p "Enter Vesta admin email: " email
-    echo
-    if [[ "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]]
-    then
-        echo "Email address $email is valid."
-        break
-    else
-        echo "Email address $email is invalid."
-    fi
-done
+    ##################################
+    # Get admin's email
+    while true
+    do
+        read -p "Enter Vesta admin email: " email
+        echo
+        if [[ "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]]
+        then
+            echo "Email address $email is valid."
+            break
+        else
+            echo "Email address $email is invalid."
+        fi
+    done
 
+
+done
 exit
 # Creates SWAP on the server
 # One of the things that I have lerned is that this kind of servers need swap.
