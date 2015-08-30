@@ -63,7 +63,7 @@ do
 ##################################
 # Set Vesta domain
 echo "Enter a FQDN (full qualified domain name) for your server."
-echo "eg. vm.mydomain.xxx (vm from virtual machine for example)"
+echo "e.g. vm.mydomain.xxx (vm from virtual machine for example)."
 echo "Is sugested this FQDN to be different from your www"
 echo "This must be defined in your DNSs later"
 echo "Digital Ocean offers a free dns service for their clients."
