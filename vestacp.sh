@@ -75,7 +75,7 @@ do
         echo
         if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
         then
-            if [ $adminpass1 != $adminpass1 ]
+            if [ $adminpass1 != $adminpass2 ]
             then
                 echo "Passwords are not identical. Try again."
                 echo
