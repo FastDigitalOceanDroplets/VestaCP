@@ -62,7 +62,6 @@ do
 
 ##################################
 # change Vesta admin password
-
 while true
 do
     read -s  -p "Enter admin password: " adminpass1
@@ -87,51 +86,20 @@ do
 done
 
 ##################################
-# Interactive Part
-# change root password
-
+# Get admin's email
 while true
 do
-
-    while true
-    do
-        read -s  -p "Enter admin password: " adminpass1
+    read -p "Enter Vesta admin email: " email
+    if [[ "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]]
+    then
+        echo "Email address $email is valid."
         echo
-        read -s  -p "Enter admin password again: " adminpass2
+        break
+    else
+        echo "Email address $email is invalid."
         echo
-        if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
-        then
-            echo "Passwords can't be empty. Try again."
-            echo
-        else
-            if [ $adminpass1 != $adminpass2 ]
-            then
-                echo "Passwords are not identical. Try again."
-                echo
-            else
-                echo "Password accepted."
-                echo
-                break
-            fi
-        fi
-    done
-
-
-    ##################################
-    # Get admin's email
-    while true
-    do
-        read -p "Enter Vesta admin email: " email
-        if [[ "$email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]]
-        then
-            echo "Email address $email is valid."
-            echo
-            break
-        else
-            echo "Email address $email is invalid."
-            echo
-        fi
-    done
+    fi
+done
 
 
 done
