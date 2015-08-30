@@ -68,27 +68,29 @@ echo "Is sugested this FQDN to be different from www.domain.com"
 echo "This must be defined in your DNSs later"
 echo "Digital Ocean offers a free dns service for their clients."
 echo
-while true
+not_valid=true
+while [[ not_valid ]]
 do
+    not_valid=false
     read -p "Enter FQDN: " fqdn
     echo
-    if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
+
+    if  [[ -z "$fqdn" ]]
     then
+        not_valid=true
         echo "Passwords can't be empty. Try again."
         echo
-    else
-        if [ $adminpass1 != $adminpass2 ]
-        then
-            echo "Passwords are not identical. Try again."
-            echo
-        else
-            echo "Password accepted."
-            echo
-            break
-        fi
+    fi
+
+    if [ $adminpass1 != $adminpass2 ]
+    then
+        not_valid=true
+        echo "Passwords are not identical. Try again."
+        echo
     fi
 done
-
+echo "FQDN $fqdn accepted."
+echo
 
 
 
