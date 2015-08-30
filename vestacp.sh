@@ -32,30 +32,30 @@ echo
 ##################################
 # change root password
 #
-# while true
-# do
-#     read -s  -p "Enter admin password: " rootpass1
-#     echo
-#     read -s  -p "Enter admin password again: " rootpass2
-#     echo
-#     if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
-#     then
-#         echo "Password will not be changed. Both are empty."
-#         echo
-#         break
-#     else
-#         if [ $rootpass1 != $rootpass2 ]
-#         then
-#                 echo "Passwords are not identical. Try again."
-#                 echo
-#         else
-#                 #echo "root:$rootpass1" | chpasswd
-#                 echo "Password changed."
-#                 echo
-#                 break
-#         fi
-#     fi
-# done
+    while true
+    do
+        read -s  -p "Enter admin password: " rootpass1
+        echo
+        read -s  -p "Enter admin password again: " rootpass2
+        echo
+        if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
+        then
+            echo "Password will not be changed. Both are empty."
+            echo
+            break
+        else
+            if [ $rootpass1 != $rootpass2 ]
+            then
+                    echo "Passwords are not identical. Try again."
+                    echo
+            else
+                    echo "root:$rootpass1" | chpasswd
+                    echo "Password changed."
+                    echo
+                    break
+            fi
+        fi
+    done
 
 while true
 do
