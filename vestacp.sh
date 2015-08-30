@@ -89,6 +89,7 @@ do
             fi
         fi
     done
+
 ##################################
 # Interactive Part
 # change root password
