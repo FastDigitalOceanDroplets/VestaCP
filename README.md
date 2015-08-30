@@ -3,10 +3,7 @@ A little script for myself to have a web server with Vesta Control Panel in no t
 
 Minimal requirements
 
-A 5 dollars a month Digital Ocean Ubuntu 14.04 64bit server ()
-512 mb ram / 1 CPU
-20 GB SSD Disk
-1000 GB Transfer
+A 5 dollars a month Digital Ocean Ubuntu 14.04 64bit server, 512 mb ram / 1 CPU, 20 GB SSD Disk, 1000 GB Transfer
 
 Get it at https://goo.gl/WWmpYW
 
