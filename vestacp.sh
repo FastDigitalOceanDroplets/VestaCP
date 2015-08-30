@@ -78,7 +78,7 @@ do
     if  [[ -z "$fqdn" ]]
     then
         not_valid=true
-        echo "Passwords can't be empty. Try again."
+        echo "FQDN can't be empty. Try again."
         echo
     fi
 
