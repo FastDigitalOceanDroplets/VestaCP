@@ -83,7 +83,6 @@ do
                 echo "Passwords are not identical. Try again."
                 echo
             else
-                #echo "root:$adminpass1" | chpasswd
                 echo "Password accepted."
                 echo
                 break
