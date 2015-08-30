@@ -73,7 +73,7 @@ do
         echo
         read -s  -p "Enter admin password again: " adminpass2
         echo
-        if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
+        if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
         then
             if [ $adminpass1 != $adminpass1 ]
             then
