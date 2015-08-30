@@ -6,37 +6,56 @@
 #   -m, --mysql-password       Set MySQL password instead of generating it
 #   -q, --quota                Enable File System Quota"
 
-
-curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp_post.sh
-
 # Prevents doing this from other account than root
 if [ "x$(id -u)" != 'x0' ]; then
     echo 'Error: this script can only be executed by root'
     exit 1
 fi
 
+curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp_post.sh
+
+echo "################################################################"
+echo "#     https://github.com/FastDigitalOceanDroplets/VestaCP      #"
+echo "#                                                              #"
+echo "# We will go though the proccess of settin up a full web       #"
+echo "# server. It will have web, php, email, ftp, dns, mysql all in #"
+echo "# a fantastic easy and smart to use control panel called Vesta.#"
+echo "#                                                              #"
+echo "# Vesta is free, but you can get paid help at their site.      #"
+echo "#                    https://vestacp.com                       #"
+echo "################################################################"
+echo
+
+
+
+
+
 ##################################
 # Interactive Part
 # change root password
 
+while true
+do
+
+
     while true
     do
-	read -s  -p "Enter root password: " rootpass1
+	read -s  -p "Enter admin password: " adminpass1
     	echo
-	read -s  -p "Enter root password again: " rootpass2
+	read -s  -p "Enter admin password again: " adminpass2
 	echo
-	if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
+	if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
 	then
 	     echo "Password will not be changed. Both are empty."
 	     echo
              break
 	else
-	    if [ $rootpass1 != $rootpass2 ]
+	    if [ $adminpass1 != $adminpass1 ]
 	    then
                 echo "Passwords are not identical. Try again."
                 echo
  	    else
-                echo "root:$rootpass1" | chpasswd
+                #echo "root:$adminpass1" | chpasswd
                 echo "Password changed."
                 echo
                 break
@@ -44,6 +63,7 @@ fi
 	fi
     done
 
+done
 ##################################
 # Get admin's email
 while true
