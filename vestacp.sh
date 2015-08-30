@@ -18,7 +18,7 @@ echo
 echo "################################################################"
 echo "#     https://github.com/FastDigitalOceanDroplets/VestaCP      #"
 echo "#                                                              #"
-echo "# We will go though the proccess of settin up a full web       #"
+echo "# We will go though the proccess of setting up a full web      #"
 echo "# server. It will have web, php, email, ftp, dns, mysql all in #"
 echo "# a fantastic easy and smart to use control panel called Vesta.#"
 echo "#                                                              #"
