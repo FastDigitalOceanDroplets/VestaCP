@@ -67,30 +67,22 @@ echo
 while true
 do
 
-
     while true
     do
-	read -s  -p "Enter admin password: " adminpass1
-    	echo
-	read -s  -p "Enter admin password again: " adminpass2
-	echo
-	if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
-	then
-	     echo "Password will not be changed. Both are empty."
-	     echo
-             break
-	else
-	    if [ $adminpass1 != $adminpass1 ]
-	    then
-                echo "Passwords are not identical. Try again."
-                echo
- 	    else
-                #echo "root:$adminpass1" | chpasswd
-                echo "Password changed."
-                echo
-                break
-            fi
-	fi
+        read -s  -p "Enter admin password: " adminpass1
+        echo
+        read -s  -p "Enter admin password again: " adminpass2
+        echo
+        if [ $adminpass1 != $adminpass1 ]
+        then
+            echo "Passwords are not identical. Try again."
+            echo
+        else
+            #echo "root:$adminpass1" | chpasswd
+            echo "Password accepted."
+            echo
+            break
+        fi
     done
 
     ##################################
