@@ -75,17 +75,17 @@ do
     read -p "Enter FQDN: " fqdn
     echo
 
-    if  [[ -z "$fqdn" ]]
-    then
-        not_valid=true
-        echo "FQDN can't be empty. Try again."
-        echo
-    fi
+    # if  [[ -z "$fqdn" ]]
+    # then
+    #     not_valid=true
+    #     echo "FQDN can't be empty. Try again."
+    #     echo
+    # fi
 
-    if [ $adminpass1 != $adminpass2 ]
+    if [[ "$fqdn" =~ ^.{4,253}$)(^(?:[a-zA-Z](?:(?:[a-zA-Z0-9\-]){,61}[a-zA-Z])?\.)+[a-zA-Z]{2,}$ ]]
     then
         not_valid=true
-        echo "Passwords are not identical. Try again."
+        echo "FQDN is not valid. Try again."
         echo
     fi
 done
