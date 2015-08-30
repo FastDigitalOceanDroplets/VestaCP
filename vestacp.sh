@@ -1,4 +1,12 @@
 #!/bin/bash
+
+#   -s, --hostname             Set server hostname
+#   -e, --email                Set email address
+#   -p, --password             Set admin password instead of generating it
+#   -m, --mysql-password       Set MySQL password instead of generating it
+#   -q, --quota                Enable File System Quota"
+
+
 curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp_post.sh
 
 # Prevents doing this from other account than root
@@ -27,7 +35,7 @@ fi
 	    then
                 echo "Passwords are not identical. Try again."
                 echo
- 	        else
+ 	    else
                 echo "root:$rootpass1" | chpasswd
                 echo "Password changed."
                 echo
@@ -51,6 +59,7 @@ do
     fi
 done
 
+exit
 # Creates SWAP on the server
 # One of the things that I have lerned is that this kind of servers need swap.
 # These fast SSD disks do this even more dicirable to have.
