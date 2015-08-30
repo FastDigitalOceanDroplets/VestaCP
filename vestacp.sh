@@ -25,7 +25,7 @@ echo "#                                                              #"
 echo "# Vesta is free, but you can get paid help at their site.      #"
 echo "#                    https://vestacp.com                       #"
 echo "################################################################"
- x
+echo
 
 
 
