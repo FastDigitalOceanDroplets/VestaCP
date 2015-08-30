@@ -9,6 +9,7 @@ A 5 dollars a month Digital Ocean Ubuntu 14.04 64bit server ()
 1000 GB Transfer
 
 Get it at with a 10 dollar rebate at https://www.digitalocean.com/?refcode=4c039b01c48f
+
 The biger the droplet, the better it works. Some features like Spam-Assasin and ClamAV install by default in servers with more than 3 GB of ram.
 
 After login to your droplet for the first time, copy the line bellow (withouth the first #) and execute it in the terminal
