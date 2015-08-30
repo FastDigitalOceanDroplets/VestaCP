@@ -62,11 +62,15 @@ do
 
 ##################################
 # Set Vesta domain
-echo "Enter a FQDN (full qualified domain name)"
-echo "e"
+echo "Enter a FQDN (full qualified domain name) for your server."
+echo "eg. vm.mydomain.xxx (vm from virtual machine for example)"
+echo "Is sugested this FQDN to be different from your www"
+echo "This must be defined in your DNSs later"
+echo "Digital Ocean offers a free dns service for their clients."
+echo
 while true
 do
-    read -p "Enter FQDN (ful: " adminpass1
+    read -p "Enter FQDN (: " adminpass1
     echo
     if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
     then
