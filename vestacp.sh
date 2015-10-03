@@ -27,90 +27,41 @@ echo "#                    https://vestacp.com                       #"
 echo "################################################################"
 echo
 
-passwd
-
-##################################
-# change root password
-#
-# while true
-# do
-#     read -s  -p "Enter admin password: " rootpass1
-#     echo
-#     read -s  -p "Enter admin password again: " rootpass2
-#     echo
-#     if  [[ -z "$rootpass1" ]] && [[ -z "$rootpass2" ]]
-#     then
-#         echo "Password will not be changed. Both are empty."
-#         echo
-#         break
-#     else
-#         if [ $rootpass1 != $rootpass2 ]
-#         then
-#                 echo "Passwords are not identical. Try again."
-#                 echo
-#         else
-#                 #echo "root:$rootpass1" | chpasswd
-#                 echo "Password changed."
-#                 echo
-#                 break
-#         fi
-#     fi
-# done
-
-while true
-do
+while true; do
+    read -p "Do you want to change root password for this server? " yn
+    case $yn in
+        [Yy]* ) passwd; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 ##################################
 # Set Vesta domain
+echo
 echo "Enter a FQDN (full qualified domain name) for your server."
 echo "e.g. vm.domain.com (vm from virtual machine for example)."
 echo "Is sugested this FQDN to be different from www.domain.com"
 echo "This must be defined in your DNSs later"
 echo "Digital Ocean offers a free dns service for their clients."
 echo
-not_valid=true
-while [[ not_valid ]]
+
+fqdn=""
+while [[ -z "$fqdn" ]]
 do
-    not_valid=false
     read -p "Enter FQDN: " fqdn
-    echo
-
-    # if  [[ -z "$fqdn" ]]
-    # then
-    #     not_valid=true
-    #     echo "FQDN can't be empty. Try again."
-    #     echo
-    # fi
-
-    if [[ "$fqdn" =~ (?=^.{1,254}$)(^(?:(?!\d|-)[a-zA-Z0-9\-]{1,63}(?<!-)\.?)+(?:[a-zA-Z]{2,})$) ]]
-    then
-        not_valid=true
-        echo "FQDN is not valid. Try again."
-        echo
-    fi
+    fqdn=`echo $fqdn | grep -P '(?=^.{1,254}$)(^(?>(?!\d+\.)[a-zA-Z0-9_\-]{1,63}\.?)+(?:[a-zA-Z]{2,})$)'`
 done
 echo "FQDN $fqdn accepted."
 echo
-
-
-
-
-
-
-
-
-
-
-
-
 
 ##################################
 # change Vesta admin password
 while true
 do
-    read -s  -p "Enter admin password: " adminpass1
+    read -s  -p "Enter VestaCP admin password: " adminpass1
     echo
-    read -s  -p "Enter admin password again: " adminpass2
+    read -s  -p "Enter VestaCP admin password again: " adminpass2
     echo
     if  [[ -z "$adminpass1" ]] && [[ -z "$adminpass2" ]]
     then
@@ -118,31 +69,6 @@ do
         echo
     else
         if [ $adminpass1 != $adminpass2 ]
-        then
-            echo "Passwords are not identical. Try again."
-            echo
-        else
-            echo "Password accepted."
-            echo
-            break
-        fi
-    fi
-done
-
-##################################
-# change Vesta MySQL password
-while true
-do
-    read -s  -p "Enter MySQL password: " mysql1
-    echo
-    read -s  -p "Enter MySQL password again: " mysql2
-    echo
-    if  [[ -z "$mysql1" ]] && [[ -z "$mysql2" ]]
-    then
-        echo "Passwords can't be empty. Try again."
-        echo
-    else
-        if [ $mysql1 != $mysql2 ]
         then
             echo "Passwords are not identical. Try again."
             echo
@@ -170,9 +96,30 @@ do
     fi
 done
 
-
+##################################
+# change Vesta MySQL password
+while true
+do
+    read -s  -p "Enter MySQL root password: " mysql1
+    echo
+    read -s  -p "Enter MySQL root password again: " mysql2
+    echo
+    if  [[ -z "$mysql1" ]] && [[ -z "$mysql2" ]]
+    then
+        echo "Passwords can't be empty. Try again."
+        echo
+    else
+        if [ $mysql1 != $mysql2 ]
+        then
+            echo "Passwords are not identical. Try again."
+            echo
+        else
+            echo "Password accepted."
+            echo            break
+        fi
+    fi
 done
-exit
+
 # Creates SWAP on the server
 # One of the things that I have lerned is that this kind of servers need swap.
 # These fast SSD disks do this even more dicirable to have.
