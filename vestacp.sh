@@ -115,7 +115,8 @@ do
             echo
         else
             echo "Password accepted."
-            echo            break
+            echo
+            break
         fi
     fi
 done
