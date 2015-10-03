@@ -3,9 +3,8 @@ A little script for myself to have a web server in Digital Ocean with Vesta Cont
 
 Minimal requirements
 
-A 5 dollars a month Digital Ocean Ubuntu 14.04 64bit server, 512 mb ram / 1 CPU, 20 GB SSD Disk, 1000 GB Transfer
-
-Get it at https://goo.gl/WWmpYW
+A 5 dollars a month Digital Ocean Ubuntu 14.04 64bit server, 512 mb ram / 1 CPU, 20 GB SSD Disk, 1000 GB Transfer.
+Get it at https://goo.gl/WWmpYW. They will give you $10 credit just to sign in.
 
 The bigger the droplet, the better it works. Some features like Spam-Assasin and ClamAV install by default in servers with more than 3 GB of ram.
 
