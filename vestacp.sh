@@ -160,3 +160,10 @@ dpkg-reconfigure locales
 # install vesta with admin's email
 curl -O http://vestacp.com/pub/vst-install.sh
 bash vst-install.sh -e $email
+
+# unattended-upgrades
+sudo dpkg-reconfigure --priority=low unattended-upgrades
+nano /etc/apt/apt.conf.d/50unattended-upgrades
+
+# End
+echo Run the xxx now
