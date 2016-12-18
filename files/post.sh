@@ -28,10 +28,6 @@ done
 /usr/local/vesta/bin/v-change-user-password admin $adminpass1
 
 
-
-exit 0
-
-
 # Get Vestas Installed version
 installedversion=`apt-cache policy vesta | grep "Installed"`
 
