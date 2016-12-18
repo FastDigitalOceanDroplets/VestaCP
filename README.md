@@ -1,8 +1,20 @@
 # VestaCP on Digital Ocean (Ubuntu 16.04 LTE)
 A little script for myself to have a web server in Digital Ocean with Vesta Control Panel in no time.
 Currently installing 
-VestaCP, Nginx, PHP 7, MySQL, Exim, Dovecot, vsftpd, named, iptables, fail2ban
-On servers over 3Gb of ram: spamassassin, clamav
+- VestaCP
+- Nginx
+- PHP 7
+- MySQL
+- Exim
+- Dovecot
+- vsftpd
+- named
+- iptables
+- fail2ban
+
+On servers over 3Gb of ram:
+- spamassassin
+- clamav
 
 Minimal requirements
 
