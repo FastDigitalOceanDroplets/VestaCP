@@ -17,6 +17,15 @@ On servers over 3Gb of ram:
 - spamassassin
 - clamav
 
+What I aditionally do to a standard VestaCP installation is:
+- Make a swap partition os 1gb to some room for some things to work better.
+- Configure server Time Zone.
+- Configure server Locales
+- Fully Update the OS
+- Setup unattended-upgrades
+- Remove admin group 
+- ...and after installation, run patches to your vesta version if available
+
 Minimal requirements
 
 A 5 dollars a month Digital Ocean Ubuntu 16.04 64bit server, 512 mb ram / 1 CPU, 20 GB SSD Disk, 1000 GB Transfer.
@@ -28,6 +37,8 @@ After login to your droplet for the first time, copy the line bellow and execute
 
     curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
 
-Once installed, I have prepared some patches installation for your specific VestaCP version. Copy the line bellow and execute it in the terminal.
+Once installed, I have prepared some patches installation for your specific VestaCP version. Copy the line bellow and execute it in the terminal. (the patch may or may not reboot your system)
 
     bash vestacp_patch.sh
+    
+    
