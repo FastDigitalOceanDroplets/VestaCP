@@ -60,7 +60,6 @@ rm 50unattended-upgrades
 echo 'APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";' > /etc/apt/apt.conf.d/20auto-upgrades
 
-
 # remove group admin
 /usr/sbin/delgroup admin
 
