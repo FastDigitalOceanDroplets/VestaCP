@@ -61,6 +61,8 @@ echo 'APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";' > /etc/apt/apt.conf.d/20auto-upgrades
 
 
+# remove group admin
+delgroup admin
 
 # install vesta with admin's email
 curl -O http://vestacp.com/pub/vst-install.sh
