@@ -39,6 +39,3 @@ curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6
 reboot
 
 fi
-
-
-
