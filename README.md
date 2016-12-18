@@ -39,4 +39,3 @@ Once installed, I have prepared some basic setups and patches installation for t
 
     bash post.sh
     
-    
