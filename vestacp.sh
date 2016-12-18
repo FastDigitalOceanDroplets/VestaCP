@@ -54,7 +54,7 @@ apt-get -y autoremove
 
 # unattended-upgrades
 apt-get -y install update-notifier-common
-curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/50unattended-upgrades
+curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/files/50unattended-upgrades
 cat 50unattended-upgrades > /etc/apt/apt.conf.d/50unattended-upgrades
 rm 50unattended-upgrades
 echo 'APT::Periodic::Update-Package-Lists "1";
