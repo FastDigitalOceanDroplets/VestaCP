@@ -20,17 +20,6 @@ if [ "x$(id -u)" != 'x0' ]; then
 fi
 
 
-# Get Vestas Installed version
-
-echo "#!/bin/bash" > vestacp_patch.sh
-
-installedversion=`apt-cache policy vesta | grep "Installed"`
-
-if [ "$installedversion" == "  Installed: 0.9.8-17" ]; then
-	curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/files/patch_0.9.8-17.sh > vestacp_patch.sh
-fi
-
-
 # Creates SWAP on the server
 # One of the things that I have lerned is that this kind of servers need swap.
 # With these fast SSD disks you gain kind of "pseudo-ram"!!!.
