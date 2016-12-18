@@ -3,11 +3,11 @@ A little script for myself to have a web server in Digital Ocean with Vesta Cont
 
 Currently installing 
 - VestaCP
-- Nginx
-- PHP 7
-- MySQL
-- Exim
-- Dovecot
+- Nginx 1.11.x
+- PHP 7.0.x
+- MySQL 5.7.x
+- Exim 4.x
+- Dovecot 2.2.x
 - vsftpd
 - named
 - iptables
