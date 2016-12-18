@@ -21,7 +21,7 @@ fi
 
 
 installedversion=`apt-cache policy vesta | grep "Installed"`
-if [ "$installedversion" == "  Installed: 0.9.8-17"]; then
+if [ "$installedversion" == "  Installed: 0.9.8-17" ]; then
 	echo "si"
 fi
 
