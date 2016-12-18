@@ -20,7 +20,7 @@ On servers over 3Gb of ram:
 Minimal requirements
 
 A 5 dollars a month Digital Ocean Ubuntu 16.04 64bit server, 512 mb ram / 1 CPU, 20 GB SSD Disk, 1000 GB Transfer.
-Get it at https://goo.gl/WWmpYW. They will give you $10 credit in virtual machines just for signing in.
+Get it at https://goo.gl/WWmpYW . They will give you $10 credit in virtual machines just for signing in with that link.
 
 The bigger the droplet, the better it works. Some features like Spam-Assasin and ClamAV install by default in servers with more than 3 GB of ram.
 
