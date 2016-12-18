@@ -12,6 +12,6 @@ After login to your droplet for the first time, copy the line bellow and execute
 
     curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
 
-After login to your droplet for the first time, copy the line bellow and execute it in the terminal
+Once installed, I have prepared some patches installation for your specific VestaCP version. Copy the line bellow and execute it in the terminal.
 
-    curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
+    bash vestacp_patch.sh
