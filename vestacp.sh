@@ -20,16 +20,16 @@ if [ "x$(id -u)" != 'x0' ]; then
 fi
 
 
+# Get Vestas Installed version
+
+echo "#!/bin/bash" > vestacp_patch.sh
+
 installedversion=`apt-cache policy vesta | grep "Installed"`
+
 if [ "$installedversion" == "  Installed: 0.9.8-17" ]; then
-	echo "si"
+	curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/files/patch_0.9.8-17.sh > vestacp_patch.sh
 fi
 
-exit 0
-
-curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp_post.sh
-curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/db.sh > /usr/local/vesta/func/db.sh
-curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/rebuild.sh > /usr/local/vesta/func/rebuild.sh
 
 # Creates SWAP on the server
 # One of the things that I have lerned is that this kind of servers need swap.
