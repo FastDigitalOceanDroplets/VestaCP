@@ -1,6 +1,7 @@
 # VestaCP on Digital Ocean (Ubuntu 16.04 LTE)
 A little script for myself to have a web server in Digital Ocean with Vesta Control Panel in no time.
-Currently installing 
+
+`Currently installing 
 - VestaCP
 - Nginx
 - PHP 7
