@@ -11,3 +11,7 @@ The bigger the droplet, the better it works. Some features like Spam-Assasin and
 After login to your droplet for the first time, copy the line bellow and execute it in the terminal
 
     curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
+
+After login to your droplet for the first time, copy the line bellow and execute it in the terminal
+
+    curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
