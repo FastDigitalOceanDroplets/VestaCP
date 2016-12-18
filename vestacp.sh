@@ -19,6 +19,7 @@ if [ "x$(id -u)" != 'x0' ]; then
     exit 1
 fi
 
+curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/files/post.sh
 
 # Creates SWAP on the server
 # One of the things that I have lerned is that this kind of servers need swap.

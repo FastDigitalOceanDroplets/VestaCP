@@ -37,6 +37,6 @@ After login to your droplet for the first time, copy the line bellow and execute
 
 Once installed, I have prepared some patches installation for your specific VestaCP version. Copy the line bellow and execute it in the terminal. (the patch may or may not reboot your system)
 
-    bash vestacp_patch.sh
+    bash post.sh
     
     
