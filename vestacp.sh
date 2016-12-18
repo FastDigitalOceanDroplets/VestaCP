@@ -124,7 +124,7 @@ done
 # Creates SWAP on the server
 # One of the things that I have lerned is that this kind of servers need swap.
 # These fast SSD disks do this even more dicirable to have.
-sudo fallocate -l 512M /swapfile
+sudo fallocate -l 1024M /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
