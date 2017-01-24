@@ -36,6 +36,7 @@ After login to the droplet for the first time, copy the line bellow and execute 
     curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
 
 Once installed REBOOT de droplet.
+
 I have prepared some basic setups and patches installation for the specific VestaCP version. Copy the line bellow and execute it in the terminal. (the patch may or may not reboot the system again)
 
     bash post.sh
