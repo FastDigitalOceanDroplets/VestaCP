@@ -19,7 +19,7 @@ On servers over 3Gb of ram:
 - ClamAV
 
 What I additionally do to a standard VestaCP installation is:
-- Make a swap partition of 1gb to make some room for some things to work better.
+- Make a swap partition of 1 gb to make some room for some things to work better.
 - Configure server Time Zone.
 - Configure server Locales.
 - Fully Update the OS.
