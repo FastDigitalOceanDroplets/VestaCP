@@ -41,4 +41,6 @@ Once installed REBOOT the droplet.
 
 I have prepared some basic setups and patches installation for the specific VestaCP version. Copy the line bellow and execute it in the terminal. (the patch may or may not reboot the system again)
 
+    bash post.sh
+
 Please bring to my attention any issue you could find.
