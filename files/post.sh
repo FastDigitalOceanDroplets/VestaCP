@@ -48,9 +48,11 @@ if [ "$installedversion" == "Installed: 0.9.8-17" ]; then
 	#patch to fix mysql md5 passwords missing on restore
 	curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/db.sh > /usr/local/vesta/func/db.sh
 	curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/rebuild.sh > /usr/local/vesta/func/rebuild.sh
-	reboot
+	# force creation of pipe because an ocational error found on the instalation.
+	touch /usr/local/vesta/data/queue/letsencrypt.pipe
+	chmod 750 /usr/local/vesta/data/queue/letsencrypt.pipe
+	doReboot=true
 fi
-
 
 # Adds HTTPS certificate from LetsEncrypt to VestaCP control panel at the host name site on the admin user
 
@@ -83,3 +85,8 @@ fi
 ' >/etc/cron.daily/vesta_ssl
 chmod +x /etc/cron.daily/vesta_ssl
 /etc/cron.daily/vesta_ssl
+
+if [ "$doReboot" = true ] ; then
+	echo "Reboot in progress..."
+	reboot
+fi
