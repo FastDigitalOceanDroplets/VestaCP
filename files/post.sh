@@ -54,3 +54,36 @@ if [ "$installedversion" == "Installed: 0.9.8-17" ]; then
 	curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/rebuild.sh > /usr/local/vesta/func/rebuild.sh
 	reboot
 fi
+
+
+# Adds HTTPS certificate from LetsEncrypt to VestaCP control panel at the host name site on the admin user
+
+$hostname=`hostname`
+v-add-letsencrypt-user admin
+v-add-letsencrypt-domain admin $hostname
+echo '#!/bin/bash
+
+cert_src="/home/admin/conf/web/ssl.$hostname.pem"
+key_src="/home/admin/conf/web/ssl.$hostname.key"
+cert_dst="/usr/local/vesta/ssl/certificate.crt"
+key_dst="/usr/local/vesta/ssl/certificate.key"
+
+if ! cmp -s $cert_dst $cert_src
+then
+        # Copy Certificate
+        cp $cert_src $cert_dst
+
+        # Copy Keyfile
+        cp $key_src $key_dst
+
+        # Change Permission
+        chown root:mail $cert_dst
+        chown root:mail $key_dst
+
+        # Restart Services
+        service vesta restart &> /dev/null
+        service exim4 restart &> /dev/null
+fi
+' >/etc/cron.daily/vesta_ssl
+chmod +x /etc/cron.daily/vesta_ssl
+/etc/cron.daily/vesta_ssl
