@@ -54,7 +54,7 @@ fi
 
 # Adds HTTPS certificate from LetsEncrypt to VestaCP control panel at the host name site on the admin user
 
-$hostname=`hostname`
+hostname=`hostname`
 v-add-letsencrypt-user admin
 v-add-letsencrypt-domain admin $hostname
 echo '#!/bin/bash
