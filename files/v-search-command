@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# by Federico Krum - 2017
+
+if [ $# -eq 0 ]; then
+    echo "Usage: v-search-command ARG1 [ARG2] [ARG...]"
+    exit 1
+fi
+
+searchme=`ls -a /usr/local/vesta/bin/ | sort`
+#searchme=`echo $searchme | tr " " "\n" |grep lets`
+#echo $searchme | tr " " "\n"
+
+for i; do
+        searchme=`echo $searchme | tr " " "\n" |grep $i`
+done
+
+echo $searchme | tr " " "\n" 
+
+exit 1
