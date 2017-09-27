@@ -11,10 +11,6 @@ trim() {
   # mystring=$(trim "$mystring")
 }
 
-mystring="   here     is
-    something    "
-mystring=$(trim "$mystring")
-
 # Change admin password (to do) /usr/local/vesta/bin/v-change-user-password admin 
 ##################################
 # change Vesta admin password
