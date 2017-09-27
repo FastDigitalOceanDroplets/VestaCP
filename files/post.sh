@@ -61,8 +61,8 @@ v-add-letsencrypt-user admin
 v-add-letsencrypt-domain admin $hostname
 echo '#!/bin/bash
 
-cert_src="/home/admin/conf/web/ssl."$hostname".pem"
-key_src="/home/admin/conf/web/ssl."$hostname".key"
+cert_src="/home/admin/conf/web/ssl.'$hostname'.pem"
+key_src="/home/admin/conf/web/ssl.'$hostname'.key"
 cert_dst="/usr/local/vesta/ssl/certificate.crt"
 key_dst="/usr/local/vesta/ssl/certificate.key"
 
