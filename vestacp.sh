@@ -1,5 +1,5 @@
 #!/bin/bash
-echo 2sd
+echo 
 echo
 echo "################################################################"
 echo "#     https://github.com/FastDigitalOceanDroplets/VestaCP      #"
