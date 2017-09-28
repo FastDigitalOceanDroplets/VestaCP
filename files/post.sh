@@ -68,3 +68,7 @@ if [ "$doReboot" = true ] ; then
 	echo "Reboot in progress..."
 	reboot
 fi
+exit 
+
+cd /home/admin/conf/web
+while [ true ]; do ls;sleep 2;echo; done
