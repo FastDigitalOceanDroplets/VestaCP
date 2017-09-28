@@ -15,6 +15,9 @@ for i; do
         searchme=`echo $searchme | tr " " "\n" |grep $i`
 done
 
-echo $searchme | tr " " "\n" 
-
+if [ "$searchme" ==  ""  ]; then
+        echo "No Vesta commands with that argument/s."
+else
+        echo $searchme | tr " " "\n" 
+fi
 exit 1

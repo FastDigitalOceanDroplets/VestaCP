@@ -48,13 +48,19 @@ if [ "$installedversion" == "Installed: 0.9.8-17" ]; then
 	#patch to fix mysql md5 passwords missing on restore
 	curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/db.sh > /usr/local/vesta/func/db.sh
 	curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/rebuild.sh > /usr/local/vesta/func/rebuild.sh
-	# force creation of pipe because an ocational error found on the instalation.
-	touch /usr/local/vesta/data/queue/letsencrypt.pipe
-	chmod 750 /usr/local/vesta/data/queue/letsencrypt.pipe
 	doReboot=true
 fi
 
+# Added v-search command
+
+curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/files/v-search-command > /usr/local/vesta/bin/v-search-command
+chmod 770 /usr/local/vesta/bin/v-search-command
+
 # Adds HTTPS certificate from LetsEncrypt to VestaCP control panel at the host name site on the admin user
+
+	# force creation of pipe because on ocational times is missing.
+	touch /usr/local/vesta/data/queue/letsencrypt.pipe
+	chmod 750 /usr/local/vesta/data/queue/letsencrypt.pipe
 
 hostname=`hostname`
 v-add-letsencrypt-user admin
