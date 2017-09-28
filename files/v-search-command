@@ -8,8 +8,6 @@ if [ $# -eq 0 ]; then
 fi
 
 searchme=`ls -a /usr/local/vesta/bin/ | sort`
-#searchme=`echo $searchme | tr " " "\n" |grep lets`
-#echo $searchme | tr " " "\n"
 
 for i; do
         searchme=`echo $searchme | tr " " "\n" |grep $i`
