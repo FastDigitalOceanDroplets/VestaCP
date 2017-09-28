@@ -1,25 +1,29 @@
 # VestaCP on Digital Ocean (Ubuntu 16.04 LTE)
 
-A little script for myself to have a web server in Digital Ocean with Vesta Control Panel in no time.
+A little script for myself to have a web server in Digital Ocean with Vesta Control Panel in no time. 
+I consider Vesta THE BEST FREE control panel ever. Good for people with no unix experience and much better for the others.
 
 Currently installing 
-- VestaCP
-- Nginx 1.11.x
-- PHP 7.0.x
-- MySQL 5.7.x
-- Exim 4.x
-- Dovecot 2.2.x
-- vsftpd
-- named
-- iptables
-- fail2ban
+
+ - VestaCP
+ - Nginx 1.11.x
+ - PHP 7.0.x
+ - MySQL 5.7.x
+ - Exim 4.x
+ - Dovecot 2.2.x
+ - vsftpd
+ - named
+ - iptables
+ - fail2ban
 
 On servers over 3Gb of ram:
-- Spam-Assassin
-- ClamAV
+
+ - Spam-Assassin
+ - ClamAV
 
 What I additionally do to a standard VestaCP installation is:
 - NEW!! Make the VestaCP interface secure by default by automatically adding a free Let's Encrypt certificate.
+- NEW!! Added a v-search-command for you to find shell Vesta commands easily. (special for newbies and old people like me ;) )
 - Make a swap partition of 1 gb to make some room for some things to work better.
 - Configure server Time Zone.
 - Configure server Locales.
