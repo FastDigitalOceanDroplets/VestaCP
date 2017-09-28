@@ -24,9 +24,9 @@ On servers over 3Gb of ram:
  - Spam-Assassin
  - ClamAV
 
-What I additionally do to a standard VestaCP installation is:
+What I additionally do to a standard VestaCP installation ?
 - NEW!! Make the VestaCP interface secure by default by automatically adding a free Let's Encrypt certificate.
-- NEW!! Added a v-search-command for you to find shell Vesta commands easily. (special for newbies and old people like me ;) )
+- NEW!! Added a v-search-command for you to find shell Vesta commands easily (special for newbies and memoryless people like me) ;)
 - Make a swap partition of 1 gb to make some room for some things to work better.
 - Configure server Time Zone.
 - Configure server Locales.
@@ -39,7 +39,7 @@ Minimal requirements
 
 A 5 dollars a month Digital Ocean Ubuntu 16.04 64 bit server, 512 mb ram / 1 CPU, 20 GB SSD Disk, 1000 GB Transfer.
 Get it at https://goo.gl/WWmpYW . 
-With their affiliate program they will instantly give you 10 u$ credit in virtual machines just for signing in with that link.
+With this affiliate program link, they will instantly give you `10 u$ credit in virtual machines` (this is a 2 month free hosting) just for signing in with that link.
 
 After login to the droplet for the first time, copy the line bellow and execute it in the terminal
 
