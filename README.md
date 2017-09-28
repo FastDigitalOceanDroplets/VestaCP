@@ -43,4 +43,4 @@ I have prepared some basic setups and patches installation for the specific Vest
 
     bash post.sh
 
-Please bring to my attention any issue you could find.
+Please bring to my attention on any issue you could find.
