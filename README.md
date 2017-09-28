@@ -1,7 +1,10 @@
 # VestaCP on Digital Ocean (Ubuntu 16.04 LTE)
 
 A little script for myself to have a web server in Digital Ocean with Vesta Control Panel in no time. 
-I consider Vesta THE BEST FREE control panel ever. Good for people with no unix experience and much better for the others.
+I consider Vesta THE BEST FREE WEB CONTROL PANEL ever.
+Good for people with no unix experience and much better for the others.
+
+Conbined with the simplicity of DigitalOcean virtual servers, there is no better deal on web hosting.
 
 Currently installing 
 
