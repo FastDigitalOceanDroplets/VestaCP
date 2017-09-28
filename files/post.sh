@@ -59,6 +59,10 @@ fi
 hostname=`hostname`
 v-add-letsencrypt-user admin
 v-add-letsencrypt-domain admin $hostname
+curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/files/vesta_ssl > /etc/cron.daily/vesta_ssl
+sed -i 's/0DOMAIN0//gi' /etc/cron.daily/vesta_ssl
+
+
 echo '#!/bin/bash
 
 cert_src="/home/admin/conf/web/ssl.'$hostname'.pem"
