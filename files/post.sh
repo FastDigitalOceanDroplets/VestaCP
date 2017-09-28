@@ -60,33 +60,7 @@ hostname=`hostname`
 v-add-letsencrypt-user admin
 v-add-letsencrypt-domain admin $hostname
 curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/files/vesta_ssl > /etc/cron.daily/vesta_ssl
-sed -i 's/0DOMAIN0//gi' /etc/cron.daily/vesta_ssl
-
-
-echo '#!/bin/bash
-
-cert_src="/home/admin/conf/web/ssl.'$hostname'.pem"
-key_src="/home/admin/conf/web/ssl.'$hostname'.key"
-cert_dst="/usr/local/vesta/ssl/certificate.crt"
-key_dst="/usr/local/vesta/ssl/certificate.key"
-
-if ! cmp -s $cert_dst $cert_src
-then
-        # Copy Certificate
-        cp $cert_src $cert_dst
-
-        # Copy Keyfile
-        cp $key_src $key_dst
-
-        # Change Permission
-        chown root:mail $cert_dst
-        chown root:mail $key_dst
-
-        # Restart Services
-        service vesta restart &> /dev/null
-        service exim4 restart &> /dev/null
-fi
-' >/etc/cron.daily/vesta_ssl
+sed -i 's/0DOMAIN0/'$hostname'/gi' /etc/cron.daily/vesta_ssl
 chmod +x /etc/cron.daily/vesta_ssl
 /etc/cron.daily/vesta_ssl
 
