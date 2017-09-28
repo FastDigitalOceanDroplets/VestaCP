@@ -1,6 +1,6 @@
 #!/bin/bash
-cert_src="/home/admin/conf/web/ssl.*domain*.pem"
-key_src="/home/admin/conf/web/ssl.*domain*.key"
+cert_src="/home/admin/conf/web/ssl.0domain0.pem"
+key_src="/home/admin/conf/web/ssl.0domain0.key"
 cert_dst="/usr/local/vesta/ssl/certificate.crt"
 key_dst="/usr/local/vesta/ssl/certificate.key"
 if ! cmp -s $cert_dst $cert_src
