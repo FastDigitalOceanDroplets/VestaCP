@@ -19,6 +19,7 @@ On servers over 3Gb of ram:
 - ClamAV
 
 What I additionally do to a standard VestaCP installation is:
+- NEW!! Make the VestaCP interface secure by default by automatically adding a free Let's Encrypt certificate.
 - Make a swap partition of 1 gb to make some room for some things to work better.
 - Configure server Time Zone.
 - Configure server Locales.
