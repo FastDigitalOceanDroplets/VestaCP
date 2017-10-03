@@ -4,7 +4,7 @@ A little script for myself to have a web server in Digital Ocean with Vesta Cont
 I consider Vesta THE BEST FREE WEB CONTROL PANEL ever.
 Good for people with no unix experience and much better for the others.
 
-Combined with the simplicity of DigitalOcean virtual servers, there is no better deal on web hosting.
+Combined with the simplicity of DigitalOcean's virtual servers, there is no better deal on web hosting.
 
 Currently installing 
 
