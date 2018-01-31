@@ -37,7 +37,7 @@ What I additionally do to a standard VestaCP installation ?
 
 Minimal requirements
 
-A 5 dollars a month Digital Ocean Ubuntu 16.04 64 bit server, 512 mb ram / 1 CPU, 20 GB SSD Disk, 1000 GB Transfer.
+A 5 dollars a month Digital Ocean Ubuntu 16.04 64 bit server, 1 GB ram / 1 CPU, 25 GB SSD Disk, 1000 GB Transfer.
 Get it at https://goo.gl/WWmpYW . 
 With this affiliate program link, they will instantly give you `10 u$ credit in virtual machines` (this is a 2 month free hosting) just for signing in with that link.
 
