@@ -39,7 +39,7 @@ done
 /usr/local/vesta/bin/v-change-user-password admin $adminpass1
 
 
-# Get Vestas Installed version
+# Get Vesta's Installed version
 installedversion=`apt-cache policy vesta | grep "Installed"`
 installedversion=$(trim "$installedversion")
 echo "$installedversion"
@@ -50,6 +50,12 @@ if [ "$installedversion" == "Installed: 0.9.8-17" ]; then
 	curl https://raw.githubusercontent.com/serghey-rodin/vesta/04d617d756656829fa6c6a0920ca2aeea84f8461/func/rebuild.sh > /usr/local/vesta/func/rebuild.sh
 	doReboot=true
 fi
+
+# Force https/SSL on a domain adding template
+cd /usr/local/vesta/data/templates/web
+wget http://c.vestacp.com/0.9.8/rhel/force-https/nginx.tar.gz
+tar -xzvf nginx.tar.gz
+rm -f nginx.tar.gz
 
 # Added v-search command
 
