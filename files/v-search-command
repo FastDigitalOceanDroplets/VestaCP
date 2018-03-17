@@ -14,7 +14,7 @@ for i; do
 done
 
 if [ "$searchme" ==  ""  ]; then
-        echo "No Vesta commands with that argument/s."
+        echo "No Vesta commands found with that/those argument/s."
 else
         echo $searchme | tr " " "\n" 
 fi
