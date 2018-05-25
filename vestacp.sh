@@ -63,6 +63,10 @@ APT::Periodic::Unattended-Upgrade "1";' > /etc/apt/apt.conf.d/20auto-upgrades
 # remove group admin
 /usr/sbin/delgroup admin
 
+# Enables front white space for history log prevention (specialy good for v-change-user-password)
+echo 'HISTCONTROL=ignoreboth:erasedups' >> /etc/bash.bashrc 
+echo "HISTIGNORE='v*password*'" >> /etc/bash.bashrc 
+
 # install vesta with admin's email
 curl -O http://vestacp.com/pub/vst-install.sh
 bash vst-install.sh
