@@ -63,7 +63,7 @@ APT::Periodic::Unattended-Upgrade "1";' > /etc/apt/apt.conf.d/20auto-upgrades
 # remove group admin
 /usr/sbin/delgroup admin
 
-# Enables front white space for history log prevention (specialy good for v-change-user-password)
+# Enables front white space for history log prevention and for Vesta v commands that contain word "password"
 echo 'HISTCONTROL=ignoreboth:erasedups' >> /etc/bash.bashrc 
 echo "HISTIGNORE='v*password*'" >> /etc/bash.bashrc 
 
