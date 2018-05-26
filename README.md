@@ -25,6 +25,7 @@ On servers over 3Gb of ram:
  - ClamAV
 
 What I additionally do to a standard VestaCP installation ?
+- NEW!! Make bash history 'forget' all vesta 'v-' commands that have the 'password' word on it for security issues.
 - NEW!! Make the VestaCP interface secure by default by automatically adding a free Let's Encrypt certificate.
 - NEW!! Added a v-search-command for you to find shell Vesta commands easily (special for newbies and memoryless people like me) ;)
 - Make a swap partition of 1 gb to make some room for some things to work better.
@@ -45,7 +46,7 @@ After login to the droplet for the first time, copy the line bellow and execute 
 
     curl -O https://raw.githubusercontent.com/FastDigitalOceanDroplets/VestaCP/master/vestacp.sh && bash vestacp.sh
 
-Once installed REBOOT the droplet. (Very important to do for the nex step !!!)
+Once installed REBOOT the droplet. (Very important to do for the next step !!!)
 
 I have prepared some basic setups and patches installation for the specific VestaCP version. Copy the line bellow and execute it in the terminal. (the patch may or may not reboot the system again)
 
