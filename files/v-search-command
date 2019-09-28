@@ -18,4 +18,4 @@ if [ "$searchme" ==  ""  ]; then
 else
         echo $searchme | tr " " "\n" 
 fi
-exit 1
+exit
