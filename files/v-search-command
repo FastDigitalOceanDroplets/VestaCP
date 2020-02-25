@@ -1,5 +1,56 @@
 #!/bin/bash
 
+# info: search for available commands
+#
+# This function searches for available Hestia Control Panel commands
+# and returns results based on the specified criteria.
+#
+# Originally developed for VestaCP by Federico Krum
+# Made better by Kristan Kenney at HestiaCP
+# https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/files/v-search-command
+
+#----------------------------------------------------------#
+#                    Variable&Function                     #
+#----------------------------------------------------------#
+source $VESTA/func/main.sh
+
+#----------------------------------------------------------#
+#                    Verifications                         #
+#----------------------------------------------------------#
+if [ $# -eq 0 ]; then
+    echo "ERROR: No search arguments specified."
+    echo "Usage: v-search-command ARG1 [ARG2] [ARG...]"
+    exit 1
+fi
+
+#----------------------------------------------------------#
+#                       Action                             #
+#----------------------------------------------------------#
+
+SearchPath=`ls -a $VESTA/bin/ | sort`
+TotalItems=`ls -a $VESTA/bin/ | sort | wc -l`
+
+for i; do
+    SearchResults=`echo $SearchPath | tr " " "\n" | grep $i`
+    FoundItems=`echo $SearchResults | tr " " "\n" | grep $i | wc -l`
+done
+
+if [ -z "$SearchResults" ]; then
+    echo "No available commands were found matching the specified criteria."
+    echo "There are a total of $TotalItems commands available."
+else
+    echo "Command Search Results"
+    echo "================================="
+    echo $SearchResults | tr " " "\n"
+    echo "================================="
+    echo "Found $FoundItems matching items in $TotalItems commands."
+fi
+exit
+
+
+
+#!/bin/bash
+
 # by Federico Krum - 2017
 
 if [ $# -eq 0 ]; then
