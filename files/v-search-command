@@ -1,28 +1,5 @@
 #!/bin/bash
 
-# by Federico Krum - 2017
-
-if [ $# -eq 0 ]; then
-    echo "Usage: v-search-command ARG1 [ARG2] [ARG...]"
-    exit 1
-fi
-
-searchme=`ls -a /usr/local/vesta/bin/ | sort`
-
-for i; do
-        searchme=`echo $searchme | tr " " "\n" |grep $i`
-done
-
-if [ "$searchme" ==  ""  ]; then
-        echo "No Vesta commands found with that/those argument/s."
-else
-        echo $searchme | tr " " "\n" 
-fi
-exit
-
-
-#!/bin/bash
-
 # info: search for available commands
 #
 # This function searches for available Hestia Control Panel commands
@@ -54,39 +31,19 @@ SearchPath=`ls -a $VESTA/bin/ | sort`
 TotalItems=`ls -a $VESTA/bin/ | sort | wc -l`
 
 for i; do
-    SearchResults=`echo $SearchPath | tr " " "\n" | grep $i`
-    FoundItems=`echo $SearchResults | tr " " "\n" | grep $i | wc -l`
+    SearchPath=`echo $SearchPath | tr " " "\n" | grep $i`
 done
 
-if [ -z "$SearchResults" ]; then
+FoundItems=`echo $SearchPath | tr " " "\n" | grep $i | wc -l`
+
+if [ -z "$SearchPath" ]; then
     echo "No available commands were found matching the specified criteria."
     echo "There are a total of $TotalItems commands available."
 else
     echo "Command Search Results"
     echo "================================="
-    echo $SearchResults | tr " " "\n"
+    echo $SearchPath | tr " " "\n"
     echo "================================="
     echo "Found $FoundItems matching items in $TotalItems commands."
 fi
 exit
-
-
-
-
-searchme=`ls -a /usr/local/vesta/bin/ | sort`
-
-for i; do
-        searchme=`echo $searchme | tr " " "\n" |grep $i`
-done
-
-if [ "$searchme" ==  ""  ]; then
-        echo "No Vesta commands found with that/those argument/s."
-else
-        echo $searchme | tr " " "\n" 
-fi
-exit
-
-
-
-
-
