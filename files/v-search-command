@@ -6,8 +6,8 @@
 # that contain all the words that has being pass to it as arguments.
 #
 # Originally developed for VestaCP by Federico Krum
-# Made better by Kristan Kenney at HestiaCP
 # https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/files/v-search-command
+# Made nicer by Kristan Kenney at HestiaCP
 
 #----------------------------------------------------------#
 #                    Variable&Function                     #
