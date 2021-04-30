@@ -1,13 +1,11 @@
 #!/bin/bash
-
 # info: search for available commands
 #
-# This function searches for available Hestia Control Panel commands
-# that contain all the words that has being pass to it as arguments.
+# This function searches for available Vesta Control Panel commands
+# that contain all the words that have been pass to it as arguments.
 #
 # Originally developed for VestaCP by Federico Krum
 # https://github.com/FastDigitalOceanDroplets/VestaCP/blob/master/files/v-search-command
-# Made nicer by Kristan Kenney at HestiaCP
 
 #----------------------------------------------------------#
 #                    Variable&Function                     #
